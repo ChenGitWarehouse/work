@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mountain Resort</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet"  href="css/bootstrap.css">
+		<script src="bootstrap.js"></script>
+		<style>
+			.carousel_head {
+				height: 600px;
+			}
+			.d-block .w-100 {
+				height: 600px;
+			}
+			.slide_navi {
+				width: 1360px;
+				height: 400px;
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 50px;
+			}
+			.slide_navi_left {
+				width: 80px;
+				height: 200px;
+				position: absolute;
+				transform: translateY(-50%);
+				top: 50%;
+				left: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				/* border-radius: 50%; */
+				/* display: none; */
+			}
+			.slide_navi_left:hover {
+				background-color: rgba(219, 219, 219, 0.86);
+				transition: 0.5s;
+			}
+			.slide_navi_left:hover img{
+				opacity: 0.3;
+				transition: 0.5s;
+			}
+			.slide_navi_center {
+				position: absolute;
+				transform: translate(-50%);
+				left: 50%;
+				width: 1000px;
+				height: 390px;
+				background-color: rgb(249, 249, 255);
+				overflow: hidden;
+			}
+			.slide_navi_center_top {
+				width: 100%;
+				height: 60px;
+				border-top: 2px solid rgb(214, 214, 214);
+				background-color: rgb(245, 245, 245);
+			}
+			.slide_navi_center_footer {
+				display: flex;
+				align-items:center ;
+				/* justify-content: space-between; */
+				width: 100%;
+				height: 300px;
+			}
+			.navi_item {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				margin-top: 30px;
+				transition: 1s;
+				margin-left: 60px;
+			}
+			.navi_item_img {
+				width: 260px;
+				height: 250px;
+				overflow: hidden;
+			}
+			.navi_item_img:hover {
+				box-shadow: 3px 3px 15px black;
+			}
+			.navi_item_img:hover img {
+				transform: scale(1.1);
+				transition: 1s;
+				
+			}
+			.a_btn {
+				margin-top: 30px;
+				width: 130px;
+				height: 50px;
+				border: 2px solid black;
+				border-radius: 8px;
+			}
+			.a_btn a{
+				color: black;
+			}
+			.a_btn:hover {
+				background-color: black;
+			}
+			.a_btn:hover a{
+				color: white;
+			}
+ 			.slide_navi_right {
+				width: 80px;
+				height: 200px;
+				display: none;
+				position: absolute;
+				transform: translateY(-50%);
+				top: 50%;
+				right: 10px;
+				align-items: center;
+				justify-content: center;
+			}
+			.slide_navi_right:hover {
+				background-color: rgba(219, 219, 219, 0.86);
+				transition: 0.5s;
+			}
+			.slide_navi_right:hover img{
+				opacity: 0.3;
+				transition: 0.5s;
+			}
+		</style>
+	</head>
+	<body>
+
+		<header id="page-header">
+			<div style="text-align: center;">
+				<div id="carouselExampleIndicators" class="carousel slide carousel_head" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+					</div>
+					<div class="carousel-inner">
+					  <div class="carousel-item active">
+						<img src="images/bg1.jpg" class="d-block w-100" alt="..." style="height:600px ;">
+					  </div>
+					  <div class="carousel-item">
+						<img src="images/bg2.jpg" class="d-block w-100" alt="..." style="height:600px ;">
+					  </div>
+					  <div class="carousel-item">
+						<img src="images/bg3.jpg" class="d-block w-100" alt="..." style="height:600px ;">
+					  </div>
+					  <div class="carousel-item">
+						<img src="images/bg4.jpg" class="d-block w-100" alt="..." style="height:600px ;">
+					  </div>
+					  <div class="carousel-item">
+						<img src="images/bg5.jpg" class="d-block w-100" alt="..." style="height:600px ;">
+					  </div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					  <span class="visually-hidden">Next</span>
+					</button>
+				  </div>
+				<!-- <img src="images/logo.jpg"/> -->
+				<div style="position: absolute; z-index: 2; left: 670px; top: 100px;">Mountain Resort</div>
+			</div>
+		</header>
+
+		<nav id="menu" style="z-index: 20;">
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
+				</li>
+				<li>
+					<a href="ACCOM.html">ACCOM</a>
+				</li><li>
+					<a href="EVENTS.html">EVENTS</a>
+				</li>
+				<li>
+					<a href="REST.html">REST</a>
+				</li>
+				<li>
+					<a href="MORE.html">MORE</a>
+				</li><li>
+					<a href="Login.html">LOGIN</a>
+				</li>
+			</ul>
+		</nav>
+
+		<article>
+			<div  class="mainContent">
+				<h2>Welcome</h2>
+				<p>
+					<b>Mountain Resort is a resort for those who love the outdoors, where you can do all kinds of outdoor activities and our resort has a very nice environment. Here you can enjoy the best quality service. </b></p>
+					<p><b>Our hotel, restaurant and activities are all excellent and we look forward to your visit.		</b>		</p>
+				<p><img src="images/img6.jpg" alt="pic" class="picStyle"></p>
+				<p2>
+					Our resort is located in a combination of forest and mountain, which will bring a very beautiful landscape and fresh air.
+				 Hotel is a service and hospitality business, and in order to meet the requirements of our customers, the Mountain Resort, in addition to being full of smiles everywhere, has tried its best to create a system as complete as possible in terms of organization, to become a comprehensive resort.
+				 Our rooms are divided into single rooms, double rooms, suites and deluxe suites. Restaurants are also available, including a fine dining restaurant and a convenient fast food restaurant. All rooms are equipped with air conditioning.
+				 In-room facilities such as wine coolers, telephones, color televisions, radios, refrigerators, etc. are available to make guests feel truly "at home" when they stay at Mountain Resort.			</p2>
+				
+				<div class="horSeparator"></div>
+			<footer style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+				<nav class="button" style="margin-top: 30px;">
+					<a href="read more.html">Read More</a>
+				</nav>
+
+				<div class="slide_navi">
+					<div class="slide_navi_left">
+						<img src="./images/左箭头(2).png" alt="">
+					</div>
+					<div class="slide_navi_center">
+						<div class="slide_navi_center_top">
+							<h3 style="line-height: 60px;">Navigation</h3>
+						</div>
+						<div class="slide_navi_center_footer">
+							<div class="navi_item">
+								<div class="navi_item_img">
+									<img src="./images/accom.jpg" alt="" style="width: 300px; height: 300px;">
+								</div>
+								<div class="a_btn">
+									<a href="ACCOM.html" style="text-decoration:none;line-height: 50px;">More</a>
+								</div>
+							</div>
+							<div class="navi_item">
+								<div class="navi_item_img">
+									<img src="./images/event.jpg" alt="" style="width: 300px; height: 300px;">
+								</div>
+								<div class="a_btn">
+									<a href="EVENTS.html" style="text-decoration:none;line-height: 50px;">More</a>
+								</div>
+							</div>
+							<div class="navi_item">
+								<div class="navi_item_img">
+									<img src="./images/rest.jpg" alt="" style="width: 300px; height: 300px;">
+								</div>
+								<div class="a_btn">
+									<a href="REST.html" style="text-decoration:none;line-height: 50px;">More</a>
+								</div>
+							</div>
+							<div class="navi_item">
+								<div class="navi_item_img">
+									<img src="./images/read more.jpg" alt="" style="width: 300px; height: 300px;">
+								</div>
+								<div class="a_btn">
+									<a href="read more.html" style="text-decoration:none;line-height: 50px;">More</a>
+								</div>
+							</div>														
+						</div>
+					</div>
+					<div class="slide_navi_right">
+						<img src="./images/右箭头.png" alt="">
+					</div>
+				</div>
+				<h1><br>About<br></h1>
+				<p>
+					Although our resort has been established for a short time, we are passionate about entertaining every customer.  Whether you come to climb or relax, we will do our best to make you have fun.
+				</p>
+				
+				<div class="horSeparator"></div>
+			</div>
+			
+		    </footer>
+
+		</article>
+		<script>
+			var left=document.querySelector('.slide_navi_left')
+			var nav_footer=document.querySelector('.slide_navi_center_footer')
+			var right=document.querySelector('.slide_navi_right')
+			var item=document.querySelectorAll('.navi_item')
+			var index=0
+			var j=0
+		    left.onclick=function(){			
+				index=1
+				console.log(index);
+				if (index>=1) {
+					right.style.display='flex'
+				}
+				if (index>=item.length-3) {
+					left.style.display='none'
+				}
+				let transX1=index*-320+'px'
+				for (let i=0;i<item.length;i++) {
+					item[i].style.transform=`translateX(${transX1})`
+				}
+			}
+		    right.onclick=function() {
+				index=0
+				console.log(index);
+				if (index=1) {
+					right.style.display='none'
+				}
+				if (index<=item.length-3) {
+					left.style.display='flex'
+				}
+				let transX1=index*-320+'px'
+				for (let i=0;i<item.length;i++) {
+					item[i].style.transform=``
+					// item[i].style.transform=`translateX(${transX1})`
+				}
+			}
+		</script>
+	</body>
+</html>

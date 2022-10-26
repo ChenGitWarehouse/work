@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mountain Resort</title>
+		<link rel="stylesheet" href="css/style.css">
+        <style>
+            .step {
+                width: 450px;
+                height: 30px;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+            .step_2 {
+                width: 450px;
+                height: 30px;
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+            .line {
+                width: 80px;
+                height: 3px;
+                background-color: aliceblue;
+                transition: 1s;
+            }
+            .step1 {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgb(240, 247, 255);
+                border: 5px solid rgba(0, 0, 0, 0);
+                font-size: 15px;
+                line-height: 10px;
+                transition: 1s;
+
+            }
+            .line_2 {
+                width: 190px;
+                height: 3px;
+                background-color: aliceblue;
+                transition: 1s;
+            }
+            .step1_2 {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: rgb(240, 247, 255);
+                border: 5px solid rgba(0, 0, 0, 0);
+                font-size: 15px;
+                line-height: 10px;
+                transition: 1s;
+            }
+        </style>
+	</head>
+    <body>
+
+		<header id="page-header">
+			<div style="text-align: center;">
+				<img src="images/logo.jpg"/>
+				<div style="position: absolute; z-index: 2; left: 670px; top: 100px;">Mountain Resort</div>
+			</div>
+		</header>
+        <nav id="menu" style="z-index: 100;">
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
+				</li>
+				<li>
+					<a href="ACCOM.html">ACCOM</a>
+				</li><li>
+					<a href="EVENTS.html">EVENTS</a>
+				</li>
+				<li>
+					<a href="REST.html">REST</a>
+				</li>
+				<li>
+					<a href="MORE.html">MORE</a>
+				</li><li>
+					<a href="Login.html">LOGIN</a>
+				</li>
+			</ul>
+		</nav>
+       
+		<div class="main">
+            <div class="header" >
+                <h1>Login or Create a Free Account!</h1>
+            </div>
+                <form>
+                    <ul class="left-form">
+                        <h2>New Account:</h2>
+                        <div class="step">
+                            <div class="line"></div>
+                            <div class="step1">1</div>
+                            <div class="line"></div>
+                            <div class="step1">2</div>
+                            <div class="line"></div>
+                            <div class="step1">3</div>
+                            <div class="line"></div>
+                            <div class="step1">4</div>
+                        </div>
+                        <li style="margin-top: 30px;">
+                            <input type="text"   placeholder="Username" />
+                        </li> 
+                        <li>
+                            <input type="text"   placeholder="Email" />
+                        </li> 
+                        <li>
+                            <input type="password"   placeholder="password" />
+                        </li> 
+                        <li>
+                            <input type="password"   placeholder="password" />
+                        </li> 
+                        <button type="submit" class="btn-submit"><a href="success.html"> Submit</a></button>
+                    </ul>
+                    <ul class="right-form">
+                        <h3>Login:</h3>
+                        <div class="step_2">
+                            <div class="line_2"></div>
+                            <div class="step1_2">1</div>
+                            <div class="line_2"></div>
+                            <div class="step1_2">2</div>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <li><input type="text"  placeholder="Username" /></li>
+                            <li> <input type="password"  placeholder="Password" /></li>
+                            <button type="submit" class="btn btn-submit"><a href="success.html"> Submit</a></button>
+                        </div>
+                </form>
+                
+            </div>
+            <script>
+                //获取New Account下的所需节点 left_form 为上面四个输入框的上级盒子
+                var left_form=document.querySelector('.left-form')
+                // 获取四个输入框 
+                var ipts=left_form.querySelectorAll('input')
+                // 获取四个进度条（线）
+                var line=left_form.querySelectorAll('.line')
+                // 获取四个进度条（圆圈）
+                var step1=left_form.querySelectorAll('.step1')
+
+                // 同上 只不过获取的是login下方的元素
+                var right_form=document.querySelector('.right-form')
+                var ipts2=right_form.querySelectorAll('input')
+                var line_2=right_form.querySelectorAll('.line_2')
+                var step1_2=right_form.querySelectorAll('.step1_2')
+                var sum =0
+                // input事件 onblur为失去焦点事件，当第0个输入框的焦点失去后，判断内部有没有内容，有内容就将对应的进度点亮，没有则将进度取消
+                ipts[0].onblur=function() {
+                    // 当输入框内有文字时 也就是value不等于空，将对应进度条的背景色改变
+                    if (ipts[0].value!=='') {
+                        line[0].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[0].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[0].style.width='12px'
+                        step1[0].style.height='12px'
+                        step1[0].innerHTML=''
+                        step1[0].color='white'
+                        // 如果框内没有文字，则取消掉进度条状态
+                    } else  {
+                        line[0].style.backgroundColor='aliceblue'
+                        step1[0].style.backgroundColor='aliceblue'
+                        step1[0].style.width='10px'
+                        step1[0].style.height='10px'
+                        step1[0].innerHTML='1'
+                    }
+                }
+                
+                ipts[1].onblur=function() {
+                    console.log(ipts[1].value);
+                    if (ipts[1].value!=='') {
+                        line[1].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[1].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[1].style.width='12px'
+                        step1[1].style.height='12px'
+                        step1[1].innerHTML=''
+                        step1[1].color='white'
+                    } else  {
+                        line[1].style.backgroundColor='aliceblue'
+                        step1[1].style.backgroundColor='aliceblue'
+                        step1[1].style.width='10px'
+                        step1[1].style.height='10px'
+                        step1[1].innerHTML='2'
+                    }
+                }
+
+                ipts[2].onblur=function() {
+                    console.log(ipts[2].value);
+                    if (ipts[2].value!=='') {
+                        line[2].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[2].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[2].style.width='12px'
+                        step1[2].style.height='12px'
+                        step1[2].innerHTML=''
+                        step1[2].color='white'
+                    } else  {
+                        line[2].style.backgroundColor='aliceblue'
+                        step1[2].style.backgroundColor='aliceblue'
+                        step1[2].style.width='10px'
+                        step1[2].style.height='10px'
+                        step1[2].innerHTML='2'
+                    }
+                }
+
+                ipts[3].onblur=function() {
+                    console.log(ipts[3].value);
+                    if (ipts[3].value!=='') {
+                        line[3].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[3].style.backgroundColor='rgb(60, 124, 197)'
+                        step1[3].style.width='12px'
+                        step1[3].style.height='12px'
+                        step1[3].innerHTML=''
+                        step1[3].color='white'
+                    } else  {
+                        line[3].style.backgroundColor='aliceblue'
+                        step1[3].style.backgroundColor='aliceblue'
+                        step1[3].style.width='10px'
+                        step1[3].style.height='10px'
+                        step1[3].innerHTML='2'
+                    }
+                }
+
+                ipts2[0].onblur=function() {
+                    console.log(ipts2[0].value);
+                    if (ipts2[0].value!=='') {
+                        line_2[0].style.backgroundColor='rgb(60, 124, 197)'
+                        step1_2[0].style.backgroundColor='rgb(60, 124, 197)'
+                        step1_2[0].style.width='12px'
+                        step1_2[0].style.height='12px'
+                        step1_2[0].innerHTML=''
+                        step1_2[0].color='white'
+                    } else  {
+                        line_2[0].style.backgroundColor='aliceblue'
+                        step1_2[0].style.backgroundColor='aliceblue'
+                        step1_2[0].style.width='10px'
+                        step1_2[0].style.height='10px'
+                        step1_2[0].innerHTML='1'
+                    }
+                }
+                
+                ipts2[1].onblur=function() {
+                    console.log(ipts2[1].value);
+                    if (ipts2[1].value!=='') {
+                        line_2[1].style.backgroundColor='rgb(60, 124, 197)'
+                        step1_2[1].style.backgroundColor='rgb(60, 124, 197)'
+                        step1_2[1].style.width='12px'
+                        step1_2[1].style.height='12px'
+                        step1_2[1].innerHTML=''
+                        step1_2[1].color='white'
+                    } else  {
+                        line_2[1].style.backgroundColor='aliceblue'
+                        step1_2[1].style.backgroundColor='aliceblue'
+                        step1_2[1].style.width='10px'
+                        step1_2[1].style.height='10px'
+                        step1_2[1].innerHTML='2'
+                    }
+                }
+            </script>
+    </body>

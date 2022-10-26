@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mountain Resort</title>
+		<link rel="stylesheet" href="css/style.css">
+		
+	</head>
+    <body>
+
+		<header id="page-header">
+			<div style="text-align: center;">
+				<img src="images/logo.jpg"/>
+				<div style="position: absolute; z-index: 2; left: 670px; top: 100px;">Mountain Resort</div>
+			</div>
+		</header>
+        <nav id="menu">
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
+				</li>
+				<li>
+					<a href="ACCOM.html">ACCOM</a>
+				</li><li>
+					<a href="EVENTS.html">EVENTS</a>
+				</li>
+				<li>
+					<a href="REST.html">REST</a>
+				</li>
+				<li>
+					<a href="MORE.html">MORE</a>
+				</li><li>
+					<a href="Login.html">LOGIN</a>
+				</li>
+			</ul>
+		</nav>
+       
+        <aside class="widget">
+            <div class="vbf">
+                <h2 class="form_title"> BOOK ONLINE</h2>
+                <form id="booking-form" class="inner">
+                    <div class="form-group">
+                        <input class="form-control" name="booking-name" placeholder="Enter Your Name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="booking-email" placeholder="Enter Your Email Address" type="email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" name="booking-phone" placeholder="Enter Your Phone Number" type="text">
+                    </div>
+                    <div class="form-group">
+                        <!-- <input class="form-control" name="booking-room" placeholder="Enter Your booking room" type="text"> -->
+                        <select name="" id="" style="width: 404px;height: 44px;margin-top: 20px;background-color: white;color: rgb(83, 83, 83);">
+                            <option selected="selected" disabled="disabled"  style='display: none; ' value=''>Enter Your booking room</option>
+                            <option value="">romm1</option>
+                            <option value="">romm2</option>
+                            <option value="">romm3</option>
+                            <option value="">romm4</option>
+
+                        </select>
+                    </div>
+                   
+                    <div class="form-group  nopadding">
+                        <div class="input-group">
+                            <div class="form_date">
+                                <input class="date" name="booking-checkin" placeholder="Arrival Date" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group nopadding">
+                        <div class="input-group">
+                            <div class="form_date">
+                                <input class="date" name="booking-checkout" placeholder="Departure Date" type="text">
+                            </div>
+                        </div>
+                    </div>
+					<button type="submit"><a href="Bookingsuccess.html">BOOK A ROOM NOW</a></button>
+                    
+                </form>
+            </div>
+        </aside>
+        <script>
+            
+        </script>
+		
+    </body>

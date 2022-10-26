@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mountain Resort</title>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			.conta {
+				position: relative;
+				height: 2000px;
+			}
+			.conta_left {
+				position: absolute;
+				left: 10px;
+				top: 30px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				z-index: -1;
+			}
+			.conta_left_item {
+				margin: 0;
+				overflow: hidden;
+				width: 600px;
+				height: 360px;
+				margin-top: 30px;
+				/* 动画名称 */
+				animation-name: an1;
+				/* 持续时间 */
+				animation-duration: 1.5s
+
+			}
+			.conta_left_item_over {
+				/* 动画名称 */
+				animation-name: an2;
+				/* 持续时间 */
+				animation-duration: 1s
+			}
+			.conta_left_item img {
+				width: 100%;
+			}
+			.conta_left_item:hover {
+				box-shadow: 6px 6px 15px black;
+				transition: 0.8s;
+			}
+			.conta_left_item:hover img {
+				transform: scale(1.1);
+				transition: 0.8s;
+
+			} 
+
+			.conta_right {
+				position: absolute;
+				top: 90px;
+				right: 100px;
+				width: 700px;
+				background-color: aliceblue;
+				/* display: none; */
+				transition: 1s;
+				/* 动画名称 */
+				animation-name: an3;
+				/* 持续时间 */
+				animation-duration: 1.2s;
+			}
+			.conta_right_grow {
+
+				/* animation-fill-mode: forwards; */
+				transition: 1s;
+				transform: translate(-50%);
+      			left: 50%;
+				width: 1000px;
+				height: 700px;
+			}
+			.conta_right iframe {
+				margin: 0;
+			}
+			@keyframes an1 {
+				0% {
+					transform: translateX(300px);
+					opacity: 0.2;
+				}
+				100% {
+					transform: translateX(0px);
+					opacity: 1;
+				}
+			}
+			@keyframes an2 {
+				0% {
+					transform: translateX(0px);
+					opacity: 1;
+				}
+				100% {
+					transform: translateX(-800px);
+					opacity: 0.1;
+				}
+			}
+			@keyframes an3 {
+				0% {
+					opacity: 0.2;
+				}
+				100% {
+					opacity: 1;
+
+				}
+			}
+		</style>
+	</head>
+	<body>
+
+		<header id="page-header">
+			<div style="text-align: center;">
+				<img src="images/logo.jpg"/>
+				<div style="position: absolute; z-index: 2; left: 670px; top: 100px;">Mountain Resort</div>
+			</div>
+		</header>
+
+		<nav id="menu" style="z-index: 10;">
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
+				</li>
+				<li>
+					<a href="ACCOM.html">ACCOM</a>
+				</li><li>
+					<a href="EVENTS.html">EVENTS</a>
+				</li>
+				<li>
+					<a href="REST.html">REST</a>
+				</li>
+				<li>
+					<a href="MORE.html">MORE</a>
+				</li><li>
+					<a href="Login.html">LOGIN</a>
+				</li>
+			</ul>
+		</nav>
+        <footer>
+		<div class="conta">
+			<div class="conta_left">
+				<div class="conta_left_item"><img src="images/img1.png" ></div>
+				<div class="conta_left_item"><img src="images/img2.png" ></div>
+				<div class="conta_left_item"><img src="images/img3.png" ></div>
+				<div class="conta_left_item"><img src="images/img4.png" ></div>
+				<div class="conta_left_item"><img src="images/img5.jpeg" ></div>
+			</div>
+			<div >
+				<!-- <iframe width="560" height="315" src="https://f.video.weibocdn.com/o0/FeOKWk4Llx080guyZvji010412002SFy0E010.mp4?label=mp4_720p&template=720x976.24.0&media_id=4828536025055395&tp=8x8A3El:YTkl0eM8&us=0&ori=1&bf=4&ot=v&lp=0000f15xh&ps=mZ6WB&uid=hUpc6A3&ab=8224-g0,7397-g1,3601-g32,8143-g0,8013-g0,7598-g0&Expires=1666707584&ssig=FL%2B4cacnCF&KID=unistore,video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+				<iframe class="conta_right" width="560" height="315" src="https://www.youtube.com/embed/55QabX7kbYI?start=12" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+		</div>
+		</footer>
+		<script>
+			window.onscroll = function(){
+				var scrollTops = document.documentElement.scrollTop || document.body.scrollTop;
+				// var scrollHight = document.documentElement.scrollHeight || document.body.scrollHeight;
+				// var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+				var conta_left = document.querySelector(".conta_left")
+				var conta_right = document.querySelector(".conta_right")
+				var top=conta_right.offsetTop
+				console.log(scrollTops);
+				if (scrollTops >= 630) {
+					conta_right.style.position='fixed';
+					// conta_right.style.top=y2+'px';
+				} else {
+					conta_right.style.position='absolute';
+				}
+				let flag = true
+				if( scrollTops>=1800 && flag==true ) { 
+					conta_right.className= 'conta_right conta_right_grow'
+					conta_left.className= 'conta_left conta_left_item_over'
+					console.log(1);
+					setTimeout(()=>{
+						conta_left.style.display = "none"; 
+						console.log(2);
+						flag = true
+					},500)
+				} else {
+					conta_right.className= 'conta_right'
+					conta_left.className= 'conta_left'
+					conta_left.style.display = "flex"; 
+					console.log(3);
+					flag = false
+				}
+		}
+		</script>
+	</body>
+</html>

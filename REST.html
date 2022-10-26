@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Mountain Resort</title>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			.mainContent{
+				width: 40%;
+				float: left;
+			}
+			.mainContent_right{
+				width: 60%;
+				height: 1400px;
+				float: left;
+			}
+			.conn{
+				width: 100%;
+				height: 200px;
+				margin-top: 50px;
+				transition: 1s;
+				display: none;
+				z-index: -10;
+			}
+			.an {
+				/* 动画名称 */
+				animation-name: an1;
+				/* 持续时间 */
+				animation-duration: 1.5s;
+				display: block;
+				z-index: -10;
+			}
+			.conn>img{
+				width: 30%;
+				height: 200px;
+				float: left;
+			}
+			.conn>p{
+				float: left;
+				margin-top: 20px;
+				margin-left: 30px;
+			}
+			@keyframes an1 {
+				0% {
+					opacity: 0.3;
+					transform: translateX(200px);
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+    <body>
+
+		<header id="page-header">
+			<div style="text-align: center;">
+				<img src="images/logo.jpg"/>
+				<div style="position: absolute; z-index: 2; left: 670px; top: 100px;">Mountain Resort</div>
+			</div>
+		</header>
+        <nav id="menu" style="z-index: 10;">
+			<ul>
+				<li>
+					<a href="index.html">HOME</a>
+				</li>
+				<li>
+					<a href="ACCOM.html">ACCOM</a>
+				</li><li>
+					<a href="EVENTS.html">EVENTS</a>
+				</li>
+				<li>
+					<a href="REST.html">REST</a>
+				</li>
+				<li>
+					<a href="MORE.html">MORE</a>
+				</li><li>
+					<a href="Login.html">LOGIN</a>
+				</li>
+			</ul>
+		</nav>
+
+		<article style="min-width: 2000px;">
+			<div class="mainContent">
+				<h1>Restaurant</h1>
+				<p>
+					Our restaurant service and food are excellent</p>
+				<p>Menus are based on seasonal, local produce with western influences.
+                	</p>
+				<p><img src="images/rest.jpeg" alt="pic" class="picStyle"></p>
+				
+			</div>
+			
+			<div class="mainContent_right">
+				<div class="conn">
+					<img src="images/food1.jpg" alt="pic" >
+					<p>Spicy Beef</p>
+				</div>
+				<div class="conn">
+					<img src="images/food2.jpg" alt="pic" >
+					<p>Sushi</p>
+				</div>
+				<div class="conn">
+					<img src="images/food3.jpg" alt="pic" >
+					<p>Seafood Noodles</p>
+				</div>
+				<div class="conn">
+					<img src="images/food4.jpg" alt="pic" >
+					<p>Kebabs</p>
+				</div>
+				<div class="conn">
+					<img src="images/food5.jpg" alt="pic" >
+					<p>Desserts</p>
+				</div>
+			</div>
+
+		</article>
+		<script>
+			// 监视窗口滚动，滚动掉某一段长度后 对应高度的图文出现
+			window.onscroll = function(){
+				// 获取当前滚动了多少高度
+				var scrollTops = document.documentElement.scrollTop || document.body.scrollTop;
+				// 获取到所有的conn元素
+				var conns =document.querySelectorAll('.conn') 
+				// 当滚动了1250 最后一张图出现
+				if (scrollTops>=1250) {
+					conns[4].className='conn an'
+				// 当滚动了1000 第4张图出现
+				} else if (scrollTops>=1000) {
+				// 当滚动了750 第3张图出现  以此类推
+					conns[3].className='conn an'
+				} else if (scrollTops>=750) {
+					conns[2].className='conn an'
+				} else if (scrollTops>=500) {
+					conns[1].className='conn an'
+				} else if (scrollTops>=250) {
+					conns[0].className='conn an'
+				}
+			}	
+		</script>
+    </body>
